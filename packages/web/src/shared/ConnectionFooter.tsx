@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
 import devNews from 'src/dev/devNews.png'
 import { H3 } from 'src/fonts/Fonts'
-import EmailForm, { After } from 'src/forms/EmailForm'
+import EmailForm from 'src/forms/EmailForm'
 import { I18nProps, NameSpaces, withNamespaces } from 'src/i18n'
 import BookLayout from 'src/layout/BookLayout'
 import { GridRow } from 'src/layout/GridRow'
@@ -55,12 +55,7 @@ function ConnectionFooter({ t, includeDividerLine }: I18nProps & Props) {
             <Text style={[fonts.p, standardStyles.elementalMarginBottom]}>
               {t('receiveUpdates')}
             </Text>
-            <EmailForm
-              submitText={t('signUp')}
-              route={'/contacts'}
-              whenComplete={<After t={t} isDarkMode={false} />}
-              isDarkMode={false}
-            />
+            <EmailForm submitText={t('signUp')} route={'/contacts'} isDarkMode={false} />
           </View>
         </View>
       </BookLayout>
